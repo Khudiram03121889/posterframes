@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <title>AIDSO Thick Bottom Band Poster (Netaji Style) - 1131x1600</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Curated Kannada & Latin Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@400;600;700;800;900&family=Noto+Serif+Kannada:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #09090b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Anek Kannada', sans-serif;
+    }
+    .font-serif-kn { font-family: 'Noto Serif Kannada', serif; }
+    .font-headline-kn { font-family: 'Anek Kannada', 'Noto Serif Kannada', serif; }
+    .font-num { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    #poster {
+      --W: 1131px;
+      --H: 1600px;
+      --u: calc(min(var(--W), var(--H)) / 100); /* 1u = 11.31px */
+      width: var(--W);
+      height: var(--H);
+      position: relative;
+      overflow: hidden;
+      background-color: #f7f5ef;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ROOT ARTBOARD: Exactly 1131 x 1600 px -->
+  <div id="poster" class="relative overflow-hidden select-none" data-width="1131" data-height="1600" data-preset="aidso-a4">
+    
+    <!-- TOP SLOGAN BANNER (Height: 70px) -->
+    <div class="absolute top-0 inset-x-0 h-[70px] bg-black flex items-center justify-center px-8 z-30">
+      <span class="text-white text-2xl font-black tracking-widest uppercase">
+        ಶಿಕ್ಷಣ – ಮಾನವತೆ – ಸಂಸ್ಕೃತಿ ಉಳಿಸಿ!!
+      </span>
+    </div>
+
+    <!-- UPPER 70% SECTION: Clean off-white paper with quote & date -->
+    <div class="absolute top-[70px] inset-x-0 h-[1050px] p-12 flex flex-col justify-between z-10">
+      
+      <!-- Top Row: Date Badge on Left, Appeal Tag on Right -->
+      <div class="flex items-start justify-between w-full">
+        <!-- Date Badge -->
+        <div class="px-7 py-4 rounded-2xl bg-white border-2 border-slate-900 shadow-md flex flex-col items-center">
+          <span class="text-6xl font-black text-slate-950 leading-none font-num">23</span>
+          <span class="text-xl font-bold text-slate-800 mt-1 uppercase">ಜನವರಿ</span>
+          <span class="text-lg font-bold text-[#a00000] font-num">1897 - 1945</span>
+        </div>
+
+        <!-- Appeal Tag -->
+        <div class="px-6 py-2 rounded-full bg-amber-400 text-slate-950 text-xl font-black shadow-sm">
+          ದೇಶಪ್ರೇಮ ದಿನಾಚರಣೆ
+        </div>
+      </div>
+
+      <!-- Outlined Clean Quote Box (Upper Left, 62% width) -->
+      <div class="w-[62%] p-8 rounded-3xl bg-white/90 border-2 border-red-900/30 shadow-xl relative backdrop-blur-sm z-20 mb-8">
+        <span class="text-8xl font-serif text-[#a00000]/15 absolute -top-4 left-4 leading-none select-none">“</span>
+        <div class="relative z-10 flex flex-col gap-4">
+          <span class="text-[#a00000] text-lg font-bold uppercase tracking-wider flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#a00000]"></span> ನೇತಾಜಿಯವರ ವೀರ ವಾಣಿ
+          </span>
+          <p class="text-[30px] font-semibold leading-[1.45] text-slate-900 font-serif-kn">
+            "ನನಗೆ ರಕ್ತ ಕೊಡಿ, ನಾನು ನಿಮಗೆ ಸ್ವಾತಂತ್ರ್ಯವನ್ನು ತಂದುಕೊಡುತ್ತೇನೆ! ನಮ್ಮ ದೇಶಕ್ಕಾಗಿ ನಾವೆಲ್ಲರೂ ತ್ಯಾಗಕ್ಕೆ ಸಿದ್ಧರಾಗಬೇಕು."
+          </p>
+          <div class="text-right text-2xl font-bold text-[#a00000] pt-2 border-t border-slate-200">
+            — ಸುಭಾಷ್ ಚಂದ್ರ ಬೋಸ್
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COMMANDING HERO PORTRAIT: Crosses between upper white & lower dark band -->
+    <div class="absolute right-4 bottom-24 top-28 w-[50%] flex items-end justify-center pointer-events-none z-25">
+      <img src="assets/portrait.png" alt="Hero Portrait" class="h-full w-auto object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.5)]">
+    </div>
+
+    <!-- BOTTOM 30% THICK CRIMSON / BLACK BAND (Height: 480px) -->
+    <div class="absolute bottom-0 inset-x-0 h-[480px] bg-gradient-to-t from-black via-[#7d000c] to-[#9b0000] border-t-4 border-amber-400 z-20 flex flex-col justify-between p-12 text-white">
+      
+      <!-- Sticky Typographic Name Lockup (Left 58% width, inside bottom band) -->
+      <div class="w-[58%] flex flex-col gap-2 pt-2">
+        <span class="text-2xl font-bold text-amber-300 tracking-wide uppercase">
+          ಮಹಾನ್ ದೇಶಪ್ರೇಮಿ • ಕ್ರಾಂತಿಕಾರಿ ನಾಯಕ
+        </span>
+        <h1 class="text-7xl font-black text-white leading-none font-serif-kn drop-shadow-md">
+          ನೇತಾಜಿ ಸುಭಾಷ್ ಚಂದ್ರ ಬೋಸ್
+        </h1>
+        <p class="text-2xl font-semibold text-slate-200 mt-1">
+          ಅವರ 129 ನೇ ಜನ್ಮದಿನದ ಗೌರವ ನಮನಗಳು!!
+        </p>
+      </div>
+
+      <!-- Flush Footer Identity Sub-band -->
+      <div class="w-full flex items-center justify-between pt-4 border-t border-white/20">
+        <!-- Logo & Title -->
+        <div class="flex items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center p-2 shadow-md shrink-0">
+            <img src="assets/aidso-emblem.png" alt="AIDSO" class="w-full h-full object-contain">
+          </div>
+          <div class="flex flex-col">
+            <span class="text-4xl font-black text-amber-400 leading-none font-num tracking-tight">AIDSO</span>
+            <span class="text-xl font-bold text-white mt-0.5">ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಮಿತಿ</span>
+          </div>
+        </div>
+
+        <!-- Social Info -->
+        <div class="flex flex-col items-end text-right">
+          <span class="text-lg font-black text-white tracking-widest font-num">AIDSO KARNATAKA</span>
+          <span class="text-xs text-slate-300 tracking-wider">ALL INDIA DEMOCRATIC STUDENTS' ORGANISATION</span>
+          <span class="text-amber-400 font-mono text-xs mt-0.5">f • @ /AIDSO Karnataka</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

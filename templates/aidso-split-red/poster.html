@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <title>AIDSO Classic Split Red Poster (Bhagat Singh Style) - 1131x1600</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Curated Kannada & Latin Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@400;600;700;800;900&family=Noto+Serif+Kannada:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #09090b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Anek Kannada', sans-serif;
+    }
+    .font-serif-kn { font-family: 'Noto Serif Kannada', serif; }
+    .font-headline-kn { font-family: 'Anek Kannada', 'Noto Serif Kannada', serif; }
+    .font-num { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    #poster {
+      --W: 1131px;
+      --H: 1600px;
+      --u: calc(min(var(--W), var(--H)) / 100); /* 1u = 11.31px */
+      width: var(--W);
+      height: var(--H);
+      position: relative;
+      overflow: hidden;
+      background-color: #f7f4ed;
+      background-image: radial-gradient(circle at 70% 30%, #ffffff 0%, #f6f1e5 60%, #ebe3d0 100%);
+    }
+
+    .name-yellow-bhagat {
+      color: #ffcc00;
+      font-family: 'Noto Serif Kannada', serif;
+      font-weight: 900;
+      font-size: 84px;
+      line-height: 1.05;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Archival white photo frame (Bhagat1.jpg style) */
+    .photo-frame-bhagat {
+      background: #ffffff;
+      padding: 10px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ROOT ARTBOARD: Exactly 1131 x 1600 px (Faithfully inspired by Bhagat1.jpg) -->
+  <div id="poster" class="relative overflow-hidden select-none flex" data-width="1131" data-height="1600" data-preset="aidso-a4">
+    
+    <!-- LEFT COLUMN: 40% Width Solid Deep Crimson Red (Inspired by Bhagat1.jpg) -->
+    <div class="w-[40%] h-full bg-[#9e0c1b] text-white flex flex-col justify-between p-10 z-20 shrink-0 border-r-2 border-red-950">
+      
+      <!-- Top Date Banner: Black pill with white text -->
+      <div class="w-full bg-black py-3 px-6 rounded-md shadow-md text-center">
+        <span class="text-2xl font-black text-white tracking-wide font-num">
+          28 ಸೆಪ್ಟೆಂಬರ್ 2026
+        </span>
+      </div>
+
+      <!-- Framed Portrait Image (Archival white mat border) -->
+      <div class="my-auto flex justify-center py-4">
+        <div class="photo-frame-bhagat w-[340px] aspect-[4/5] flex items-center justify-center overflow-hidden">
+          <img src="assets/portrait.png" alt="Hero Portrait" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- Sticky Name Lockup + Resolve Text -->
+      <div class="flex flex-col gap-2">
+        <span class="text-xl font-bold text-white tracking-wide">
+          ಮಹಾನ್ ಕ್ರಾಂತಿಕಾರಿ
+        </span>
+
+        <h1 class="name-yellow-bhagat">
+          ಭಗತ್ ಸಿಂಗ್ <span class="text-2xl font-bold text-white">ಅವರ</span>
+        </h1>
+
+        <p class="text-2xl font-extrabold text-white mt-1 leading-snug">
+          119 ನೇ ಜನ್ಮ ಸಂದರ್ಭದಲ್ಲಿ ಅವರಿಗೆ ನಮ್ಮ ಗೌರವ ನಮನಗಳು!
+        </p>
+
+        <!-- Resolve text block -->
+        <div class="pt-4 mt-2 border-t border-white/20">
+          <p class="text-xl font-black text-amber-200 leading-snug">
+            ಭಗತ್ ಸಿಂಗ್ ಕನಸಿನ ಸಮಾಜವಾದಿ ಭಾರತ ನಿರ್ಮಾಣಕ್ಕಾಗಿ ಸಂಕಲ್ಪ!
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom AIDSO Identity (Left Column Bottom) -->
+      <div class="pt-6 border-t-2 border-white flex flex-col items-center text-center gap-1">
+        <span class="text-6xl font-black text-[#ffcc00] font-num leading-none tracking-tight">
+          AIDSO
+        </span>
+        <span class="text-2xl font-black text-white">
+          ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಮಿತಿ
+        </span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: 60% Width Warm Parchment Canvas for Full Quote -->
+    <div class="w-[60%] h-full flex flex-col justify-between p-14 z-20">
+      
+      <!-- Top subtle spacing / tag -->
+      <div class="self-end text-slate-400 font-mono text-xs tracking-widest uppercase">
+        AIDSO COMMEMORATIVE TRIBUTE
+      </div>
+
+      <!-- Main Quote Body (Typeset cleanly in high-contrast black serif) -->
+      <div class="my-auto flex flex-col gap-8">
+        <p class="text-[31px] font-semibold leading-[1.6] text-slate-900 font-serif-kn">
+          "ಇಲ್ಲಿಯ ಶಿಕ್ಷಣ ಎಷ್ಟು ನಿಷ್ಪ್ರಯೋಜಕ ಎಂಬುದು ಸಿದ್ಧವಾಗುತ್ತದೆ. ಇಂತಹ ಶಿಕ್ಷಣ ಪಡೆಯುವ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ದೇಶದ ಆಗು ಹೋಗುಗಳ ಬಗ್ಗೆ ಯಾವ ಆಸಕ್ತಿಯೂ ಇಲ್ಲ. ಇನ್ನು ಜಾಗತಿಕ ವಿದ್ಯಮಾನಗಳನ್ನು ತಿಳಿದುಕೊಳ್ಳುವುದು ದೂರವೇ ಉಳಿಯಿತು."
+        </p>
+
+        <p class="text-[29px] font-medium leading-[1.55] text-slate-800 font-serif-kn">
+          "ನಮ್ಮ ದೇಶದ ಯುವಕರು ನಾಳೆ ದೇಶದ ಚುಕ್ಕಾಣಿ ಹಿಡಿಯಬೇಕಾದವರು ಅವರನ್ನು ವೈಚಾರಿಕತೆಯಲ್ಲಿ ಹಿಂದುಳಿಯುವಂತೆ ಮಾಡಲಾಗುತ್ತಿದೆ. ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ವಿದ್ಯಾಭ್ಯಾಸ ಒಂದೇ ಕೆಲಸ, ಬೇರೆಯದರಲ್ಲಿ ಗಮನ ಹಾಕಿ ಓದು ಕೆಡಿಸಿಕೊಳ್ಳಬಾರದೆಂಬ ಈ ವಾದವನ್ನು ನಾವು ಸುತಾರಾಂ ಒಪ್ಪುವುದಿಲ್ಲ."
+        </p>
+
+        <div class="pt-6 border-t border-stone-300 flex flex-col items-end text-right">
+          <span class="text-3xl font-black text-slate-900 font-serif-kn">
+            - ಭಗತ್ ಸಿಂಗ್
+          </span>
+          <span class="text-xl font-bold text-slate-600 mt-1">
+            (ವಿದ್ಯಾರ್ಥಿಗಳು ಮತ್ತು ರಾಜಕೀಯ, 1926)
+          </span>
+        </div>
+      </div>
+
+      <!-- Bottom Right: Slogan & State committee note -->
+      <div class="pt-4 border-t border-stone-300 flex items-center justify-between text-slate-500 text-sm font-bold">
+        <span>ಶಿಕ್ಷಣ – ಮಾನವತೆ – ಸಂಸ್ಕೃತಿ ಉಳಿಸಿ!!</span>
+        <span class="font-mono">f • @ /AIDSO Karnataka</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+    "font":  "Noto Serif Kannada",
+    "name":  "aidso-parchment-overlay",
+    "width":  1131,
+    "ratio":  "1:1.414",
+    "height":  1600,
+    "preset":  "aidso-a4",
+    "template":  "aidso-parchment-overlay"
+}

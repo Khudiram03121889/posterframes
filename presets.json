@@ -1,0 +1,80 @@
+{
+  "instagram-square": {
+    "width": 1080,
+    "height": 1080,
+    "ratio": "1:1",
+    "description": "Standard square post for Instagram and LinkedIn"
+  },
+  "instagram-portrait": {
+    "width": 1080,
+    "height": 1350,
+    "ratio": "4:5",
+    "description": "Vertical portrait post for Instagram feed (maximum screen estate)"
+  },
+  "instagram-story": {
+    "width": 1080,
+    "height": 1920,
+    "ratio": "9:16",
+    "description": "Full-screen vertical story, reel cover, or mobile WhatsApp flyer"
+  },
+  "flyer-a4-portrait": {
+    "width": 1240,
+    "height": 1754,
+    "ratio": "1:1.414",
+    "description": "Standard A4 print / bulletin flyer (portrait, 150 DPI baseline, scale 2x for 300 DPI print)"
+  },
+  "aidso-a4": {
+    "width": 1131,
+    "height": 1600,
+    "ratio": "1:1.414",
+    "description": "Canonical AIDSO commemorative vertical portrait poster standard (Master)"
+  },
+  "aidso-a4-highres": {
+    "width": 1414,
+    "height": 2000,
+    "ratio": "1:1.414",
+    "description": "AIDSO 2K high-resolution print standard (matches raw 1414x2000 archive)"
+  },
+  "aidso-a4-web": {
+    "width": 793,
+    "height": 1122,
+    "ratio": "1:1.414",
+    "description": "AIDSO standard 96 DPI A4 digital preview (matches raw 793x1122 archive)"
+  },
+  "aidso-story": {
+    "width": 1080,
+    "height": 1920,
+    "ratio": "9:16",
+    "description": "AIDSO vertical story / WhatsApp status / reel flyer standard (3-tier stack)"
+  },
+  "flyer-a4-landscape": {
+    "width": 1754,
+    "height": 1240,
+    "ratio": "1.414:1",
+    "description": "Standard A4 landscape poster / certificate format"
+  },
+  "banner-landscape": {
+    "width": 1920,
+    "height": 1080,
+    "ratio": "16:9",
+    "description": "Full HD landscape banner, YouTube thumbnail, or desktop presentation display"
+  },
+  "event-poster": {
+    "width": 1200,
+    "height": 1600,
+    "ratio": "3:4",
+    "description": "Classic event, movie, or music festival wall poster"
+  },
+  "linkedin-banner": {
+    "width": 1584,
+    "height": 396,
+    "ratio": "4:1",
+    "description": "LinkedIn profile or company page header banner"
+  },
+  "twitter-header": {
+    "width": 1500,
+    "height": 500,
+    "ratio": "3:1",
+    "description": "Twitter / X profile header banner"
+  }
+}

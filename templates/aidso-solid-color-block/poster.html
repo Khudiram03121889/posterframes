@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <title>AIDSO Solid Color Block Poster (Engels Style) - 1131x1600</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Curated Kannada & Latin Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@400;600;700;800;900&family=Noto+Serif+Kannada:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #09090b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Anek Kannada', sans-serif;
+    }
+    .font-serif-kn { font-family: 'Noto Serif Kannada', serif; }
+    .font-headline-kn { font-family: 'Anek Kannada', 'Noto Serif Kannada', serif; }
+    .font-num { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    #poster {
+      --W: 1131px;
+      --H: 1600px;
+      --u: calc(min(var(--W), var(--H)) / 100); /* 1u = 11.31px */
+      width: var(--W);
+      height: var(--H);
+      position: relative;
+      overflow: hidden;
+      background-color: #f7f4ed;
+      background-image: radial-gradient(circle at 50% 20%, #ffffff 0%, #f6f1e5 60%, #ece5d4 100%);
+    }
+
+    /* Name Hero with Crisp Stroke */
+    .name-hero {
+      color: #b70014;
+      font-family: 'Noto Serif Kannada', serif;
+      font-weight: 900;
+      font-size: 88px;
+      line-height: 1.05;
+      text-shadow: 0 4px 12px rgba(183, 0, 20, 0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ROOT ARTBOARD: Exactly 1131 x 1600 px (Inspired by engles1.jpg) -->
+  <div id="poster" class="relative overflow-hidden select-none" data-width="1131" data-height="1600" data-preset="aidso-a4">
+    
+    <!-- Top-Left Ribbon Date Badge (Inspired by engles1.jpg) -->
+    <div class="absolute top-0 left-12 w-48 bg-[#63221b] text-white rounded-b-3xl shadow-xl flex flex-col items-center pt-8 pb-6 z-20">
+      <span class="text-2xl font-bold uppercase tracking-wider text-amber-200">ಆಗಸ್ಟ್</span>
+      <span class="text-7xl font-black leading-none font-num my-1">5</span>
+      <span class="text-xl font-bold font-num text-amber-200">2026</span>
+    </div>
+
+    <!-- Top Right: Typographic Lockup (Descriptor + Hero Name + Occasion) -->
+    <div class="absolute top-12 left-64 right-12 z-20 flex flex-col items-center text-center">
+      <span class="text-2xl font-bold text-slate-800 tracking-wide">
+        ಕಾರ್ಮಿಕ ವರ್ಗದ ಮಹಾನ್ ನಾಯಕ
+      </span>
+      <span class="text-3xl font-extrabold text-slate-900 mt-0.5">
+        ಕಾಮ್ರೇಡ್
+      </span>
+      <h1 class="name-hero mt-1">
+        ಫ್ರೆಡ್ರಿಕ್ ಎಂಗೆಲ್ಸ್
+      </h1>
+      <span class="text-3xl font-bold text-slate-800 -mt-2">
+        ಅವರ
+      </span>
+      <p class="text-2xl font-black text-slate-950 mt-3 max-w-[650px] leading-snug">
+        131ನೇ ಸ್ಮರಣ ದಿನದಂದು ಅವರಿಗೆ ನಮ್ಮ ಗೌರವ ನಮನಗಳು!
+      </p>
+    </div>
+
+    <!-- Bottom Left: Majestic Cutout Portrait (Grounded, looking towards right) -->
+    <div class="absolute left-[-20px] bottom-0 w-[540px] h-[920px] flex items-end justify-center pointer-events-none z-15">
+      <img src="assets/portrait.png" alt="Hero Portrait" class="h-full w-auto object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.4)]">
+    </div>
+
+    <!-- Bottom Right: Deep Maroon/Crimson Solid Block for Quote -->
+    <div class="absolute right-12 bottom-44 w-[540px] bg-[#63221b] text-white p-9 rounded-2xl shadow-2xl border border-red-950 z-20 flex flex-col gap-4">
+      <span class="text-6xl font-serif text-white/20 absolute -top-3 left-4 leading-none select-none">“</span>
+      <p class="text-[26px] font-semibold leading-[1.5] text-amber-50 font-serif-kn relative z-10 pt-2">
+        "ಕೇವಲ ಜಗತ್ತನ್ನು ವಿವರಿಸುವುದಷ್ಟೇ ಅಲ್ಲ, ಅದನ್ನು ಬದಲಾಯಿಸುವುದೇ ನಿಜವಾದ ಪ್ರಶ್ನೆಯಾಗಿದೆ. ಸಮಾಜವಾದವು ಸಮಾಜದ ಬದಲಾವಣೆಯ ಮೂಲಕ ನಿಜಜೀವನದಲ್ಲಿ ಮುಕ್ತಿಯನ್ನು ಒದಗಿಸುತ್ತದೆ."
+      </p>
+      <div class="text-right text-xl font-bold text-amber-200 pt-2 border-t border-white/20">
+        (ಧರ್ಮದ ಕುರಿತು ಮಾರ್ಕ್ಸ್-ಎಂಗೆಲ್ಸ್)
+      </div>
+    </div>
+
+    <!-- Bottom Right: AIDSO Brand Block (Below Quote Block, flush bottom right) -->
+    <div class="absolute right-12 bottom-8 z-20 flex items-center gap-6">
+      <div class="flex flex-col items-end">
+        <span class="text-6xl font-black text-[#b70014] leading-none font-num tracking-tight">AIDSO</span>
+        <span class="text-2xl font-extrabold text-slate-900 mt-1">ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಮಿತಿ</span>
+      </div>
+      <div class="w-20 h-20 flex items-center justify-center shrink-0">
+        <img src="assets/aidso-emblem.png" alt="AIDSO" class="w-full h-full object-contain">
+      </div>
+    </div>
+
+    <!-- Left Edge: Social Handle text -->
+    <div class="absolute left-4 bottom-8 origin-bottom-left -rotate-90 text-slate-600 text-sm font-bold tracking-wider z-20 flex items-center gap-2">
+      <span>f • @ /AIDSO Karnataka</span>
+    </div>
+
+  </div>
+
+</body>
+</html>

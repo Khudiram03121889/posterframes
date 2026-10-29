@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Minimal Editorial Poster</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Italiana&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4efe6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-italiana { font-family: 'Italiana', serif; }
+    .font-cinzel { font-family: 'Cinzel', serif; }
+    .font-mono { font-family: 'Space Mono', monospace; }
+    .poster-artboard {
+      width: 1080px;
+      height: 1920px;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      background: #f7f4ee;
+      color: #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="poster" class="poster-artboard flex flex-col justify-between p-24 select-none" data-width="1080" data-height="1920" data-preset="instagram-story">
+    
+    <!-- Top Metadata Header -->
+    <div class="flex justify-between items-baseline border-b border-black/20 pb-8 text-xs tracking-[0.25em] uppercase font-mono text-neutral-600">
+      <div>EXHIBITION NO. 04</div>
+      <div>CONTEMPORARY SCULPTURE & DESIGN</div>
+      <div>OCT — NOV 2026</div>
+    </div>
+
+    <!-- Centered Editorial Sculpture Abstract & Headline -->
+    <div class="my-auto flex flex-col items-center text-center">
+      
+      <!-- Minimalist SVG Geometry Graphic -->
+      <div class="relative w-80 h-80 mb-16 flex items-center justify-center">
+        <div class="absolute inset-0 rounded-full border border-black/30"></div>
+        <div class="absolute w-56 h-56 rounded-full border border-black/50 rotate-45"></div>
+        <div class="w-32 h-32 rounded-full bg-neutral-900"></div>
+      </div>
+
+      <div class="text-xs uppercase tracking-[0.4em] font-mono text-neutral-500 mb-6">
+        THE ARCHITECTURE OF SILENCE
+      </div>
+
+      <h1 class="font-italiana text-[130px] leading-[0.88] tracking-tight font-normal text-neutral-900 mb-8">
+        Form &<br>Void
+      </h1>
+
+      <p class="max-w-xl text-lg font-light leading-relaxed text-neutral-700">
+        An immersive exploration into minimalist spatial philosophy, material tension, and negative space across modern Asian architecture.
+      </p>
+
+    </div>
+
+    <!-- Bottom Curator & Location Info -->
+    <div class="grid grid-cols-3 gap-8 pt-8 border-t border-black/20 text-xs font-mono uppercase tracking-[0.18em] text-neutral-700">
+      <div>
+        <div class="text-neutral-400 mb-2">// LOCATION</div>
+        <div class="font-bold text-neutral-900">ATELIER MODERN</div>
+        <div>HALL 4, SOUTH WING</div>
+      </div>
+
+      <div class="text-center">
+        <div class="text-neutral-400 mb-2">// ADMISSION</div>
+        <div class="font-bold text-neutral-900">OPEN TO PUBLIC</div>
+        <div>TUESDAY — SUNDAY</div>
+      </div>
+
+      <div class="text-right">
+        <div class="text-neutral-400 mb-2">// CURATOR</div>
+        <div class="font-bold text-neutral-900">TAKASHI & ARYA</div>
+        <div>TOKYO / BANGALORE</div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

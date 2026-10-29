@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <title>ಚೆ ಗುವಾರ - 59ನೇ ಸ್ಮರಣ ದಿನ | AIDSO ಕರ್ನಾಟಕ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Curated Kannada & Latin Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@400;600;700;800;900&family=Noto+Serif+Kannada:wght@600;700;800;900&family=Noto+Sans+Kannada:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #09090b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Anek Kannada', sans-serif;
+    }
+    /* Fixed Artboard matching aidso-a4 preset (1131x1600, 1:1.414 A4 standard) */
+    .poster-artboard {
+      --W: 1131px;
+      --H: 1600px;
+      --u: calc(min(var(--W), var(--H)) / 100);
+      width: 1131px;
+      height: 1600px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 65% 45%, #ffffff 0%, #f5f6f8 65%, #eaedf0 100%);
+    }
+    .font-anek { font-family: 'Anek Kannada', sans-serif; }
+    .font-serif-kn { font-family: 'Noto Serif Kannada', serif; }
+    .font-sans-kn { font-family: 'Noto Sans Kannada', sans-serif; }
+    .font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* Classic AIDSO 3D Outline Text */
+    .aidso-brand-text {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      color: #dc2626;
+      -webkit-text-stroke: 2.5px #ffffff;
+      paint-order: stroke fill;
+      letter-spacing: 0.03em;
+    }
+
+    /* Red Headline Styling for Che Guevara */
+    .che-headline {
+      color: #dc2626;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       CANVAS ROOT: Fixed 1131x1600 A4 Artboard
+       ========================================================================= -->
+  <div id="poster" class="poster-artboard select-none" data-width="1131" data-height="1600" data-preset="aidso-a4">
+
+    <!-- L0: Subtle Paper Grain Overlay -->
+    <div class="absolute inset-0 opacity-[0.025] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none z-0"></div>
+
+    <!-- =========================================================================
+         L1: HERO PORTRAIT (Right Column, Bleeding into Bottom Black Bar)
+         ========================================================================= -->
+    <div class="absolute right-0 bottom-0 w-[640px] h-[1150px] z-10 pointer-events-none flex items-end justify-end overflow-hidden" data-bleed>
+      <!-- Che Guevara Portrait: Grayscale high-contrast with baked smooth feather -->
+      <img src="assets/che-portrait.png"
+           alt="Che Guevara"
+           class="h-[1140px] w-auto max-w-none object-cover object-top filter grayscale contrast-125 brightness-105 drop-shadow-[0_25px_35px_rgba(0,0,0,0.22)] relative z-10">
+    </div>
+
+    <!-- =========================================================================
+         L2 & L3: TOP ZONE
+         ========================================================================= -->
+    
+    <!-- TOP-LEFT: The Quotation Card (bleeds off top edge with rounded bottom corners) -->
+    <div class="quote-box absolute left-[64px] top-0 w-[610px] h-[710px] bg-white/95 border-b-[3px] border-l-[3px] border-r-[3px] border-black rounded-b-[36px] shadow-sm z-20 flex flex-col justify-between px-9 pt-[60px] pb-7"
+         data-box data-min-fill="70">
+      
+      <!-- Big Decorative Opening Quote Mark -->
+      <div class="flex items-center justify-start leading-none -mb-2">
+        <span class="text-7xl font-serif text-slate-500 font-bold select-none leading-none">“</span>
+      </div>
+
+      <!-- Quote Body in Kannada -->
+      <div class="flex-1 flex items-center py-2">
+        <p class="font-serif-kn font-semibold text-[27.5px] leading-[1.54] text-slate-900 tracking-normal">
+          ವಿಶ್ವವಿದ್ಯಾಲಯವು ಕ್ರಾಂತಿಯ ಪ್ರಾಯೋಗಿಕ ಸಾಧನೆಗಳಿಂದ ದೂರ ಉಳಿದ ದಂತಗೋಪುರದಂತಿರಬಾರದು. ಶಿಕ್ಷಣ ವ್ಯವಸ್ಥೆಯ ಸುತ್ತಲಿರುವ ಗೋಡೆಗಳು ಉರುಳಬೇಕು. ಶಿಕ್ಷಣವು ಕೇವಲ ಹಣವಂತರ ಮಕ್ಕಳು ಪಡೆಯಬಹುದಾದ ಒಂದು ಸವಲತ್ತಾಗಿ ಉಳಿಯಬಾರದು.”
+        </p>
+      </div>
+
+      <!-- Attribution / Source at bottom of quote card -->
+      <div class="text-left pt-2">
+        <span class="font-sans-kn font-bold text-[26px] text-slate-800 tracking-wide">
+          -ಚೆ ಗುವಾರ
+        </span>
+      </div>
+    </div>
+
+    <!-- TOP-RIGHT: Archival Date Badge -->
+    <div class="absolute right-[64px] top-[68px] w-[210px] h-[280px] bg-[#faf7f2] border-[4px] border-black rounded-[32px] shadow-md z-20 flex flex-col items-center justify-center p-4 text-center">
+      <!-- Big Bold Day Digits (Proportional black numerals) -->
+      <span class="font-jakarta font-black text-[96px] leading-none text-black tracking-tight">
+        09
+      </span>
+      <!-- Month in Kannada -->
+      <span class="font-anek font-extrabold text-[34px] leading-tight text-black mt-2">
+        ಅಕ್ಟೋಬರ್
+      </span>
+      <!-- Year with Wide Letter-Spacing -->
+      <span class="font-jakarta font-bold text-[24px] leading-none text-black tracking-[0.25em] mt-2">
+        2 0 2 6
+      </span>
+    </div>
+
+    <!-- =========================================================================
+         L3: MID-BOTTOM TYPOGRAPHIC LOCKUP (Mid-Left, Sticky Triad + Tag)
+         ========================================================================= -->
+    <div class="absolute left-[64px] top-[760px] max-w-[530px] flex flex-col gap-2 z-20">
+      
+      <!-- 1. Kicker / Pre-title (Balanced 2-line lockup) -->
+      <span class="font-anek font-bold text-[31px] leading-[1.28] text-black tracking-normal">
+        ಸಾಮ್ರಾಜ್ಯಶಾಹಿ ವಿರೋಧಿ<br>ಕ್ರಾಂತಿಕಾರಿ ಹೋರಾಟಗಾರ
+      </span>
+
+      <!-- 2. Hero Headline Name (Huge Display Red) -->
+      <h1 class="che-headline font-serif-kn font-black text-[126px] leading-[0.95] tracking-tight mt-1 mb-1">
+        ಚೆ ಗುವಾರ
+      </h1>
+
+      <!-- 3. Subline / Occasion (Single unified line) -->
+      <p class="font-anek font-bold text-[33px] leading-tight text-black whitespace-nowrap">
+        ಅವರ 59ನೇ ಸ್ಮರಣ ದಿನದಂದು ಅವರಿಗೆ
+      </p>
+
+      <!-- 4. Tag Badge (Dark Contrast Block) -->
+      <div class="mt-3 inline-block px-7 py-2.5 rounded-lg bg-[#18181b] border border-black text-white w-max shadow-sm">
+        <span class="font-anek font-bold text-[29px] tracking-wide leading-none">
+          ನಮ್ಮ ಗೌರವ ನಮನಗಳು!!
+        </span>
+      </div>
+
+    </div>
+
+    <!-- =========================================================================
+         L2 & L3: FLUSH BOTTOM FOOTER BANNER (Height: 185px, Solid Black)
+         ========================================================================= -->
+    <div class="absolute inset-x-0 bottom-0 h-[185px] bg-black z-30 flex items-center justify-between px-16 border-t-2 border-black" data-bleed>
+      
+      <!-- Left: AIDSO Identity Lockup -->
+      <div class="flex items-center gap-6">
+        <!-- Official AIDSO Emblem -->
+        <div class="w-20 h-20 bg-white rounded-full p-2 flex items-center justify-center shadow-md shrink-0">
+          <img src="assets/aidso-emblem.png" alt="AIDSO Emblem" class="w-full h-full object-contain">
+        </div>
+
+        <!-- Typography: "AIDSO ಕರ್ನಾಟಕ" -->
+        <div class="flex flex-col justify-center">
+          <span class="aidso-brand-text text-[60px] leading-[0.9]">
+            AIDSO
+          </span>
+          <span class="font-sans-kn font-bold text-white text-[29px] leading-tight mt-1">
+            ಕರ್ನಾಟಕ
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: Pure Black space seamlessly housing Che's shoulder/jacket -->
+      <div></div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

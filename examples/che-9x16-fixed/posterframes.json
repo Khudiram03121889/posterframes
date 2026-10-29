@@ -1,0 +1,10 @@
+{
+  "name": "examples/che-9x16-fixed",
+  "template": "aidso-memorial-story",
+  "preset": "aidso-story",
+  "font": "default",
+  "width": 1080,
+  "height": 1920,
+  "ratio": "9:16",
+  "createdAt": "2026-10-16T10:32:39.539Z"
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Autofit & Lint Pass</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black flex justify-center items-center min-h-screen">
+
+  <div id="canvas" class="relative overflow-hidden bg-slate-900 text-white"
+       style="--W:1080px;--H:1350px;--u:calc(min(var(--W),var(--H))/100); width:var(--W);height:var(--H)">
+
+    <!-- Safe Margin Container: 5u = 54px -->
+    <div class="absolute inset-[54px] flex flex-col justify-between">
+      
+      <!-- Header -->
+      <div>
+        <h1 class="text-7xl font-black text-amber-400">ಮುಖ್ಯ ಶೀರ್ಷಿಕೆ</h1>
+        <p class="text-2xl text-slate-300 mt-2">ಉಪ ಶೀರ್ಷಿಕೆ ಮತ್ತು ವಿವರಣೆ</p>
+      </div>
+
+      <!-- Quote Box WITH data-fit (Engine will auto-scale text up to fill the box!) -->
+      <div id="test-box" class="quote-box w-[600px] h-[300px] bg-emerald-950/80 border border-emerald-500/50 p-6 rounded-2xl flex flex-col justify-center" data-fit data-min-fill="75">
+        <p class="font-bold text-emerald-200">
+          ಕೇವಲ ಒಂದು ಸಣ್ಣ ವಾಕ್ಯ ಇಲ್ಲಿದೆ.
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div class="h-20 bg-slate-800 rounded-xl flex items-center px-6">
+        <span class="text-xl font-bold">ಸಂಸ್ಥೆಯ ಹೆಸರು</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

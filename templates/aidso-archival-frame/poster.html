@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <title>AIDSO Archival Frame Poster (Castro Style) - 1131x1600</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Curated Kannada & Latin Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@400;600;700;800;900&family=Noto+Serif+Kannada:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #09090b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Anek Kannada', sans-serif;
+    }
+    .font-serif-kn { font-family: 'Noto Serif Kannada', serif; }
+    .font-headline-kn { font-family: 'Anek Kannada', 'Noto Serif Kannada', serif; }
+    .font-num { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    #poster {
+      --W: 1131px;
+      --H: 1600px;
+      --u: calc(min(var(--W), var(--H)) / 100); /* 1u = 11.31px */
+      width: var(--W);
+      height: var(--H);
+      position: relative;
+      overflow: hidden;
+      background-color: #f7f4ed;
+      background-image: radial-gradient(circle at 60% 40%, #ffffff 0%, #f6f1e5 60%, #ece3d0 100%);
+    }
+
+    .name-hero-red {
+      color: #b70014;
+      font-family: 'Noto Serif Kannada', serif;
+      font-weight: 900;
+      font-size: 82px;
+      line-height: 1.05;
+      text-shadow: 0 4px 10px rgba(183, 0, 20, 0.15);
+    }
+
+    /* Arched / Framed Photo (Inspired by castro1.jpg) */
+    .castro-frame {
+      border: 8px solid #18181b;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+      background-color: #ffffff;
+      border-radius: 240px 240px 16px 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ROOT ARTBOARD: Exactly 1131 x 1600 px (Faithfully inspired by castro1.jpg) -->
+  <div id="poster" class="relative overflow-hidden select-none flex flex-col justify-between p-12" data-width="1131" data-height="1600" data-preset="aidso-a4">
+    
+    <!-- Top-Left Red Backdrop Accent Block (Behind portrait, like castro1.jpg) -->
+    <div class="absolute top-0 left-12 w-[380px] h-[480px] bg-[#9e0c1b] -z-0"></div>
+
+    <!-- UPPER ROW: Left Arched Portrait + Right Date Box & Name Lockup -->
+    <div class="relative z-10 grid grid-cols-12 gap-8 items-center pt-2">
+      
+      <!-- Left: Arched Framed Portrait (Cols 1-5, w-[400px]) -->
+      <div class="col-span-5 flex justify-center">
+        <div class="castro-frame w-[360px] aspect-[3.6/5] overflow-hidden">
+          <img src="assets/portrait.png" alt="Hero Portrait" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- Right: Date Box (top) + Typographic Name Lockup (Cols 6-12) -->
+      <div class="col-span-7 flex flex-col justify-between h-full pl-4 py-2">
+        
+        <!-- Top Right: Black Date Box (castro1.jpg style) -->
+        <div class="self-end bg-black text-white px-8 py-4 rounded-xl shadow-xl flex flex-col items-center">
+          <span class="text-7xl font-black font-num leading-none">13</span>
+          <span class="text-xl font-bold uppercase tracking-wider text-slate-200 mt-1">ಆಗಸ್ಟ್ 2026</span>
+        </div>
+
+        <!-- Sticky Name Lockup -->
+        <div class="flex flex-col gap-2 pt-6">
+          <span class="text-2xl font-bold text-slate-800 tracking-wide">
+            ಕ್ಯೂಬಾ ಕ್ರಾಂತಿಯ ಮಹಾನ್ ನಾಯಕ
+          </span>
+
+          <h1 class="name-hero-red">
+            ಫಿಡೆಲ್ ಕ್ಯಾಸ್ಟ್ರೋ
+          </h1>
+
+          <!-- Black Ribbon Occasion Box -->
+          <div class="bg-black text-white px-6 py-3 rounded-lg w-max shadow-md mt-2">
+            <span class="text-2xl font-bold tracking-wide">
+              ಜನ್ಮದಿನದಂದು ಅವರನ್ನು ನೆನೆಯೋಣ!
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- MIDDLE: CLEAN FRAMED QUOTE BOX (With top “ and bottom ” tabs, like castro1.jpg) -->
+    <div class="relative z-10 w-full p-10 bg-white/95 rounded-2xl border-2 border-stone-800 shadow-2xl mt-8">
+      <!-- Quote mark tab on top border -->
+      <div class="absolute -top-6 left-12 bg-[#f7f4ed] px-3 text-5xl font-serif text-slate-900 leading-none">
+        “
+      </div>
+
+      <div class="flex flex-col gap-5 pt-2">
+        <p class="text-[27px] font-semibold leading-[1.52] text-slate-900 font-serif-kn">
+          "ಮಾನವ ಹಕ್ಕುಗಳ ಬಗ್ಗೆ ಯಾವಾಗಲೂ ಚರ್ಚೆ ನಡೆಯುತ್ತದೆ, ಆದರೆ ಮಾನವೀಯತೆಯ ಹಕ್ಕುಗಳ ಬಗ್ಗೆಯೂ ಮಾತನಾಡುವುದು ಅವಶ್ಯಕ. ಕೆಲವರು ಐಷಾರಾಮಿ ಕಾರುಗಳಲ್ಲಿ ಪ್ರಯಾಣಿಸಲು, ಮತ್ತೆ ಕೆಲವರು ಏಕೆ ಬರಿಗಾಲಿನಲ್ಲಿ ನಡೆಯಬೇಕು? ಕೆಲವರು ಎಪ್ಪತ್ತು ವರ್ಷ ಬದುಕಲು, ಮತ್ತೆ ಕೆಲವರು ಏಕೆ ಕೇವಲ ಮೂವತ್ತೈದು ವರ್ಷ ಬದುಕಬೇಕು? ಒಂದು ತುತ್ತು ರೊಟ್ಟಿಯೂ ಇಲ್ಲದ ಪ್ರಪಂಚದ ಮಕ್ಕಳ ಪರವಾಗಿ ನಾನು ಮಾತನಾಡುತ್ತಿದ್ದೇನೆ."
+        </p>
+      </div>
+
+      <!-- Quote mark tab on bottom border -->
+      <div class="absolute -bottom-6 right-12 bg-[#f7f4ed] px-3 text-5xl font-serif text-slate-900 leading-none">
+        ”
+      </div>
+    </div>
+
+    <!-- BOTTOM IDENTITY FOOTER STRIP (castro1.jpg style) -->
+    <div class="relative z-10 w-full pt-8 flex items-center justify-between">
+      
+      <!-- Left: Slogan note -->
+      <div class="flex flex-col">
+        <span class="text-lg font-black text-slate-800 tracking-wide">ಶಿಕ್ಷಣ – ಮಾನವತೆ – ಸಂಸ್ಕೃತಿ ಉಳಿಸಿ!!</span>
+        <span class="text-xs text-slate-500 font-mono mt-0.5">f • @ /AIDSO Karnataka</span>
+      </div>
+
+      <!-- Right: AIDSO in bold red + Student sketch emblem + Karnataka State Committee -->
+      <div class="flex items-center gap-6">
+        <div class="flex flex-col items-end">
+          <span class="text-6xl font-black text-[#b70014] font-num leading-none tracking-tight">AIDSO</span>
+          <span class="text-2xl font-black text-slate-950 mt-1">ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಮಿತಿ</span>
+        </div>
+        <div class="w-20 h-20 flex items-center justify-center shrink-0">
+          <img src="assets/aidso-emblem.png" alt="AIDSO" class="w-full h-full object-contain">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

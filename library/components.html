@@ -1,0 +1,87 @@
+<!--
+  Posterframes Component Recipes
+  These are modular visual units for AI agents to compose into poster layouts.
+-->
+
+<!-- 1. HERO SUBJECT PHOTO (Transparent Cutout Treatment with Halo & Scrim) -->
+<!-- Usage: Place speaker, VIP, celebrity, product, or vehicle cutout -->
+<div class="relative flex justify-center items-end my-6">
+  <!-- Glowing backlight halo behind subject -->
+  <div class="absolute w-96 h-96 rounded-full bg-gradient-to-tr from-indigo-500/30 to-pink-500/20 blur-3xl pointer-events-none -z-0"></div>
+  
+  <!-- Subject Image with drop shadow -->
+  <img src="assets/speaker.png" alt="Featured Speaker" class="relative z-10 max-h-[700px] object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.6)]">
+  
+  <!-- Bottom gradient scrim to fade image into poster base -->
+  <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#09090b] to-transparent z-20 pointer-events-none"></div>
+</div>
+
+
+<!-- 2. SPEAKER / GUEST PROFILE CARD (Frosted Glass) -->
+<div class="flex items-center gap-6 p-5 rounded-3xl bg-slate-900/70 border border-white/10 backdrop-blur-xl shadow-xl">
+  <div class="relative w-24 h-24 rounded-2xl overflow-hidden border-2 border-amber-400/80 shadow-md">
+    <img src="assets/avatar.jpg" alt="Speaker" class="w-full h-full object-cover">
+  </div>
+  <div class="flex flex-col">
+    <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">Keynote Speaker</span>
+    <span class="text-3xl font-extrabold text-white mt-1">Dr. Rajeshwari Patil</span>
+    <span class="text-slate-400 text-lg">AI Systems Architect, IISc Bangalore</span>
+  </div>
+</div>
+
+
+<!-- 3. STAT / METRIC CALLOUT PILL -->
+<div class="flex flex-col p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+  <div class="text-slate-400 text-sm font-semibold uppercase tracking-wider">Total Vacancies</div>
+  <div class="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200 mt-1">
+    4,850+
+  </div>
+  <div class="text-slate-300 text-sm mt-2">Across 31 districts of Karnataka</div>
+</div>
+
+
+<!-- 4. SPONSOR / PARTNER LOGO BAR -->
+<div class="w-full pt-8 border-t border-white/10 flex flex-col gap-4">
+  <div class="text-xs uppercase tracking-[0.2em] font-mono text-slate-400 text-center font-bold">Supported By & Partners</div>
+  <div class="flex items-center justify-center gap-12 opacity-80 grayscale contrast-125">
+    <img src="assets/logo-1.svg" class="h-10 object-contain" alt="Logo">
+    <img src="assets/logo-2.svg" class="h-10 object-contain" alt="Logo">
+    <img src="assets/logo-3.svg" class="h-10 object-contain" alt="Logo">
+  </div>
+</div>
+
+
+<!-- 5. TICKET / PASS STUB (With Dashed Cutout Edge) -->
+<div class="relative flex items-center justify-between p-6 rounded-2xl bg-gradient-to-r from-indigo-900/60 to-purple-900/60 border border-white/15 backdrop-blur-lg">
+  <div class="flex flex-col gap-1">
+    <span class="text-xs uppercase tracking-widest text-indigo-300 font-mono">Admission Pass</span>
+    <span class="text-2xl font-bold text-white">VIP ACCESS • ALL SESSIONS</span>
+  </div>
+  <div class="border-l-2 border-dashed border-white/30 h-14 mx-6"></div>
+  <div class="flex flex-col items-end">
+    <span class="text-3xl font-black font-mono text-emerald-400">FREE</span>
+    <span class="text-xs text-slate-400 font-mono">REG. REQ.</span>
+  </div>
+</div>
+
+
+<!-- 6. HIGH-CONTRAST SCAN-TO-APPLY QR BOX -->
+<div class="flex items-center gap-5 p-5 rounded-2xl bg-white text-slate-950 shadow-2xl">
+  <!-- Dynamic SVG or generated QR code -->
+  <div class="w-20 h-20 bg-slate-100 rounded-xl flex items-center justify-center border border-slate-300">
+    <!-- QR Code SVG / Img -->
+    <svg class="w-16 h-16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="3" y="3" width="7" height="7"></rect>
+      <rect x="14" y="3" width="7" height="7"></rect>
+      <rect x="3" y="14" width="7" height="7"></rect>
+      <path d="M14 14h3v3h-3z"></path>
+      <path d="M14 20h7"></path>
+      <path d="M20 14v7"></path>
+    </svg>
+  </div>
+  <div class="flex flex-col">
+    <div class="text-xs uppercase tracking-wider font-bold text-slate-500">Fast Registration</div>
+    <div class="text-xl font-extrabold text-slate-900">Scan QR Code</div>
+    <div class="text-xs text-slate-600 mt-0.5">Direct link to apply online</div>
+  </div>
+</div>

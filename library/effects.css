@@ -1,0 +1,170 @@
+/**
+ * Posterframes Graphic Design Effects & Styling Library
+ * Reusable visual treatments for photos, user-provided assets, cards, and typography.
+ */
+
+/* ==========================================================================
+   1. Subject & Photo Treatments (For user-supplied cutouts & photos)
+   ========================================================================== */
+
+/* Cutout Sticker Border: Gives any transparent PNG cutout a crisp white sticker edge */
+.pf-sticker-white {
+  filter: drop-shadow(2px 2px 0 #ffffff)
+          drop-shadow(-2px -2px 0 #ffffff)
+          drop-shadow(2px -2px 0 #ffffff)
+          drop-shadow(-2px 2px 0 #ffffff)
+          drop-shadow(0 20px 30px rgba(0, 0, 0, 0.45));
+}
+
+.pf-sticker-accent {
+  filter: drop-shadow(3px 3px 0 var(--pf-accent, #6366f1))
+          drop-shadow(-3px -3px 0 var(--pf-accent, #6366f1))
+          drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+}
+
+/* Backlight Aura: Soft glowing halo behind a person or product cutout */
+.pf-glow-behind {
+  position: relative;
+}
+.pf-glow-behind::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--pf-glow-color, rgba(99, 102, 241, 0.45)) 0%, transparent 70%);
+  filter: blur(50px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Gradient Scrims: Darkens the bottom or top of a photo so overlaid typography is 100% legible */
+.pf-scrim-bottom {
+  position: relative;
+}
+.pf-scrim-bottom::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(9, 9, 11, 0.95) 0%, rgba(9, 9, 11, 0.6) 40%, transparent 100%);
+  pointer-events: none;
+}
+
+.pf-scrim-top {
+  position: relative;
+}
+.pf-scrim-top::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(9, 9, 11, 0.9) 0%, rgba(9, 9, 11, 0.4) 40%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Diagonal & Angular Photo Mask: Edgy fashion / sports / tech angle */
+.pf-mask-slant-left {
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+}
+.pf-mask-slant-right {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+}
+
+/* Duotone Color Wash (Cyberpunk / Editorial) */
+.pf-duotone-indigo {
+  filter: grayscale(100%) contrast(120%);
+  mix-blend-mode: luminosity;
+  background-color: #4f46e5;
+}
+
+/* ==========================================================================
+   2. Cards & Surfaces (Glassmorphism & Neobrutalism)
+   ========================================================================== */
+
+/* Frosted Dark Glass */
+.pf-glass-dark {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+/* Frosted Light Glass */
+.pf-glass-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* Neo-Brutalist Card: Bold black outline with solid hard shadow */
+.pf-brutal-card {
+  background: #ffffff;
+  color: #000000;
+  border: 4px solid #000000;
+  box-shadow: 8px 8px 0px #000000;
+}
+
+.pf-brutal-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: #facc15;
+  color: #000000;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px #000000;
+  transform: rotate(-3deg);
+}
+
+/* ==========================================================================
+   3. Decorative Details & Accents
+   ========================================================================== */
+
+/* Technical Crosshair (+) Accent */
+.pf-crosshair {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+.pf-crosshair::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: currentColor;
+  transform: translateY(-50%);
+}
+.pf-crosshair::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: currentColor;
+  transform: translateX(-50%);
+}
+
+/* Subtle Film Grain Texture Overlay */
+.pf-grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* Subtly Rotated Stamp */
+.pf-stamp-seal {
+  transform: rotate(-8deg);
+  border: 3px dashed currentColor;
+  border-radius: 9999px;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  opacity: 0.9;
+}

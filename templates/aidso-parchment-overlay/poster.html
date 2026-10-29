@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <title>AIDSO Parchment Overlay Poster (Tagore Style) - 1131x1600</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Curated Kannada & Latin Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@400;600;700;800;900&family=Noto+Serif+Kannada:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #09090b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Anek Kannada', sans-serif;
+    }
+    .font-serif-kn { font-family: 'Noto Serif Kannada', serif; }
+    .font-headline-kn { font-family: 'Anek Kannada', 'Noto Serif Kannada', serif; }
+    .font-num { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    #poster {
+      --W: 1131px;
+      --H: 1600px;
+      --u: calc(min(var(--W), var(--H)) / 100); /* 1u = 11.31px */
+      width: var(--W);
+      height: var(--H);
+      position: relative;
+      overflow: hidden;
+      background-color: #f7f4ed;
+      background-image: radial-gradient(circle at 40% 30%, #ffffff 0%, #f6f1e5 60%, #ebe3d0 100%);
+    }
+
+    .name-yellow {
+      color: #fbbf24;
+      font-family: 'Noto Serif Kannada', serif;
+      font-weight: 900;
+      font-size: 80px;
+      line-height: 1.05;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+    .name-white {
+      color: #ffffff;
+      font-family: 'Noto Serif Kannada', serif;
+      font-weight: 900;
+      font-size: 84px;
+      line-height: 1.05;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ROOT ARTBOARD: Exactly 1131 x 1600 px (Faithfully inspired by tagore1.jpg) -->
+  <div id="poster" class="relative overflow-hidden select-none" data-width="1131" data-height="1600" data-preset="aidso-a4">
+    
+    <!-- Top-Left: Inspiring Quote in Clean Black Text (Inspired by tagore1.jpg) -->
+    <div class="absolute top-12 left-12 w-[540px] z-20 flex flex-col gap-3">
+      <!-- Quote Marks SVG -->
+      <div class="text-7xl font-serif text-slate-800 leading-none select-none">“</div>
+      
+      <p class="text-[25px] font-semibold leading-[1.48] text-slate-900 font-serif-kn">
+        "ನಮ್ಮ ತಾಯ್ನಾಡಿಗೆ ಅವಮಾನವಾದಾಗ ನಿಮ್ಮ ಹೃದಯದಲ್ಲಿ ಅಗ್ನಿಯು ಪ್ರಜ್ವಲಿಸುತ್ತದೆ ಎಂಬುದು ನನಗೆ ತಿಳಿದಿದೆ. ದೇಶದ ಹಿತಕ್ಕಾಗಿ, ಮಾನವತೆಯ ಎಳಿಗೆಗಾಗಿ ತಮ್ಮ ಹಿತಾಸಕ್ತಿಯನ್ನು ಬದಿಗಿರಿಸಿ, ನೋವು ಮತ್ತು ಯಾತನೆಗಳಿಗೆ ಅಮರ ವೈಭವ ನೀಡಿದ ಮಹಾನ್ ವ್ಯಕ್ತಿಗಳ ಉದಾಹರಣೆಯನ್ನು ಅನುಸರಿಸಿ ಕಾರ್ಯಪ್ರವೃತ್ತರಾಗುವ ಸಂದರ್ಭ ಬಂದಾಗ ಮಾತ್ರ ಇಂದಿಗೂ ನೀವು ಹಿಂದೆಟು ಹಾಕುತ್ತೀರಿ ಎಂಬುದನ್ನು ನಾನು ಬಲ್ಲೆ."
+      </p>
+
+      <div class="text-right text-2xl font-black text-slate-900 pt-2 font-serif-kn">
+        — ರವೀಂದ್ರನಾಥ ಟ್ಯಾಗೋರ್
+      </div>
+    </div>
+
+    <!-- Top-Right / Middle-Right: Hero Portrait (Side Profile Feathered into Canvas) -->
+    <div class="absolute right-[-20px] top-10 w-[600px] h-[980px] flex items-start justify-center pointer-events-none z-15">
+      <img src="assets/portrait.png" alt="Hero Portrait" class="h-full w-auto object-contain object-top drop-shadow-[0_20px_35px_rgba(0,0,0,0.3)]">
+    </div>
+
+    <!-- Lower-Left: Deep Crimson Solid Box (Name + Occasion + Inner Date Badge) -->
+    <div class="absolute left-12 bottom-44 w-[620px] bg-[#9e0c1b] text-white p-8 rounded-2xl shadow-2xl border-2 border-red-950 z-20 flex flex-col gap-2">
+      
+      <!-- Top Row inside card: Descriptor on left, Date on right -->
+      <div class="flex items-start justify-between w-full">
+        <span class="text-2xl font-bold text-white tracking-wide">
+          ಮಹಾನ್ ಸಾಹಿತಿ
+        </span>
+        
+        <!-- Inner Date Box (tagore1.jpg style) -->
+        <div class="bg-black/50 border border-white/30 rounded-xl px-4 py-2 flex items-center gap-3">
+          <div class="flex flex-col text-right">
+            <span class="text-sm font-bold uppercase text-amber-300">ಆಗಸ್ಟ್</span>
+            <span class="text-xs font-mono text-slate-300">2026</span>
+          </div>
+          <span class="text-4xl font-black font-num text-white leading-none border-l border-white/30 pl-3">7</span>
+        </div>
+      </div>
+
+      <!-- Main Name in Yellow & White -->
+      <div class="flex flex-col -mt-2">
+        <span class="name-yellow">ರವೀಂದ್ರನಾಥ</span>
+        <span class="name-white -mt-2">ಟ್ಯಾಗೋರ್</span>
+      </div>
+
+      <!-- Occasion / Tribute subline -->
+      <p class="text-2xl font-bold text-amber-100 mt-2 leading-snug">
+        85ನೇ ಸ್ಮರಣ ದಿನದ ಸಂದರ್ಭದಲ್ಲಿ ಅವರಿಗೆ ನಮ್ಮ ಗೌರವ ನಮನಗಳು!
+      </p>
+
+    </div>
+
+    <!-- Bottom: Rounded Dark Gray / Black Footer Card (Inspired by tagore1.jpg) -->
+    <div class="absolute bottom-6 inset-x-12 h-24 bg-[#4a5568] text-white rounded-3xl shadow-xl z-20 flex items-center justify-between px-10 border border-white/20">
+      
+      <!-- Left: Emblem + AIDSO Title -->
+      <div class="flex items-center gap-6">
+        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center p-2 shadow-md">
+          <img src="assets/aidso-emblem.png" alt="AIDSO" class="w-full h-full object-contain">
+        </div>
+        <div class="flex flex-col">
+          <span class="text-4xl font-black text-white font-num tracking-tight leading-none">AIDSO</span>
+          <span class="text-xl font-bold text-amber-300 mt-0.5">ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಮಿತಿ</span>
+        </div>
+      </div>
+
+      <!-- Right: Subtext & Socials -->
+      <div class="flex flex-col items-end text-right">
+        <span class="text-sm font-black text-slate-200 tracking-widest font-num">AIDSO KARNATAKA</span>
+        <span class="text-xs text-slate-300 font-mono mt-0.5">f • @ /AIDSO Karnataka</span>
+      </div>
+
+    </div>
+
+    <!-- Left Edge: Vertical Social Tag -->
+    <div class="absolute left-4 bottom-8 origin-bottom-left -rotate-90 text-slate-600 text-xs font-bold tracking-wider z-20 flex items-center gap-2">
+      <span>f • @ /AIDSO Karnataka</span>
+    </div>
+
+  </div>
+
+</body>
+</html>
