@@ -9,6 +9,7 @@ import { startPreviewServer } from "../lib/preview.js";
 import { CURATED_FONTS, scanLocalKannadaFonts, getFontSnippet } from "../lib/fonts.js";
 import { saveQrToFile } from "../lib/qr.js";
 import { lintPoster } from "../lib/linter.js";
+import { runStandaloneAudit, formatAuditReport } from "../lib/auditor.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,6 +31,7 @@ Usage:
 Commands:
   init [name]          Scaffold a new poster project from a template and preset
   render [file]        Render poster HTML to high-resolution PNG or PDF via Chromium
+  verify [file]        Run deterministic DOM & alpha collision audit on layout
   preview [file]       Launch local live-reloading preview server in browser
   lint [file]          Audit poster layout (box fill ratio, empty bands, safe margins, hierarchy)
   presets              List all supported artboard dimensions & aspect ratios
@@ -45,6 +47,8 @@ Options:
   --out, -o <path>     Output file path for render (default: "poster.png")
   --scale, -s <num>    DPI scale factor for render (1 = 72-96 DPI, 2 = 2x retina, 3-4 = 300 DPI print)
   --format, -f <fmt>   Render format: "png", "jpeg", or "pdf" (default: "png")
+  --debug-boxes        Overlay color-coded mathematical bounding boxes and rulers on render
+  --json               Output audit results as structured JSON
   --width <num>        Override artboard width in pixels (overrides manifest and HTML)
   --height <num>       Override artboard height in pixels (overrides manifest and HTML)
   --port <num>         Preview server port (default: 3000)
@@ -159,9 +163,11 @@ async function handleRender(args, options) {
   const outputFile = options.out || path.join(path.dirname(inputFile), `rendered-poster${defaultExt}`);
   const scale = Number(options.scale || (format === "pdf" ? 1 : 2));
 
+  const debugBoxes = Boolean(options["debug-boxes"]);
+
   console.log(`⏳ Rendering poster with local Chromium engine...`);
   console.log(`   Source: ${inputFile}`);
-  console.log(`   Target: ${outputFile} (scale: ${scale}x, format: ${format})`);
+  console.log(`   Target: ${outputFile} (scale: ${scale}x, format: ${format}${debugBoxes ? ", debug-boxes: ON" : ""})`);
 
   try {
     const result = await renderPoster({
@@ -170,15 +176,63 @@ async function handleRender(args, options) {
       scale,
       format,
       width: options.width ? Number(options.width) : undefined,
+      height: options.height ? Number(options.height) : undefined,
+      debugBoxes
+    });
+
+    console.log(`\n🖼️  File: ${result.output}`);
+    console.log(`📏 Dimensions: ${result.width * result.scale} x ${result.height * result.scale} px`);
+    console.log(`📦 Size: ${(result.sizeBytes / 1024).toFixed(1)} KB`);
+
+    if (result.audit) {
+      console.log("\n" + formatAuditReport(result.audit) + "\n");
+      if (!result.audit.passed) {
+        console.error(`\x1b[31m❌ LAYOUT AUDIT FAILED (${result.audit.summary.errors} error(s)). Resolve layout collisions before marking poster complete.\x1b[0m\n`);
+        process.exit(1);
+      }
+    }
+
+    console.log(`✅ Render completed successfully!\n`);
+  } catch (err) {
+    console.error(`\n❌ Render failed:`, err.message);
+    process.exit(1);
+  }
+}
+
+async function handleVerify(args, options) {
+  let inputFile = args[0] || "poster.html";
+  if (!fs.existsSync(inputFile)) {
+    if (fs.existsSync(path.join(process.cwd(), "poster.html"))) {
+      inputFile = path.join(process.cwd(), "poster.html");
+    } else {
+      console.error(`❌ Poster HTML file not found: ${inputFile}`);
+      process.exit(1);
+    }
+  }
+
+  console.log(`\n🔍 Running Posterframes DOM & Alpha Collision Auditor...`);
+  console.log(`📁 Target: ${inputFile}`);
+
+  try {
+    const result = await runStandaloneAudit(inputFile, {
+      debugBoxes: Boolean(options["debug-boxes"]),
+      width: options.width ? Number(options.width) : undefined,
       height: options.height ? Number(options.height) : undefined
     });
 
-    console.log(`\n✅ Render completed successfully!`);
-    console.log(`🖼️  File: ${result.output}`);
-    console.log(`📏 Dimensions: ${result.width * result.scale} x ${result.height * result.scale} px`);
-    console.log(`📦 Size: ${(result.sizeBytes / 1024).toFixed(1)} KB\n`);
+    if (options.json) {
+      console.log(JSON.stringify(result, null, 2));
+    } else {
+      console.log("\n" + formatAuditReport(result) + "\n");
+    }
+
+    if (!result.passed) {
+      process.exit(1);
+    } else {
+      process.exit(0);
+    }
   } catch (err) {
-    console.error(`\n❌ Render failed:`, err.message);
+    console.error(`\n❌ Audit execution failed:`, err.message);
     process.exit(1);
   }
 }
@@ -348,6 +402,8 @@ async function main() {
       out: { type: "string", short: "o" },
       scale: { type: "string", short: "s" },
       format: { type: "string", short: "f" },
+      "debug-boxes": { type: "boolean", default: false },
+      json: { type: "boolean", default: false },
       width: { type: "string" },
       height: { type: "string" },
       port: { type: "string" },
@@ -371,6 +427,12 @@ async function main() {
       break;
     case "render":
       await handleRender(commandArgs, values);
+      break;
+    case "verify":
+      await handleVerify(commandArgs, values);
+      break;
+    case "audit":
+      await handleVerify(commandArgs, values);
       break;
     case "preview":
       await handlePreview(commandArgs, values);

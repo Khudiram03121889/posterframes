@@ -9,6 +9,55 @@ Posterframes enables AI agents (Antigravity, Claude Code, Codex) to act like an 
 
 ---
 
+## 🛡️ Strict Layout Laws & Verification Engine (Zero Overlap & Deterministic Audit)
+
+> [!IMPORTANT]
+> **THE 4 MANDATORY ENGINEERING LAWS FOR POSTER GENERATION**
+> Visual inspection alone gives false positives ("looks fine" to an LLM even when text clips a leader's nose or collides with a badge). Every poster MUST adhere to these 4 deterministic rules.
+
+### 1. No Freeform Absolute Text
+- **FORBIDDEN**: Never position text elements (`h1`, `h2`, `p`, `blockquote`, dates, subtitle badges, organizational footers) using freeform `position: absolute` with guessed `top`, `bottom`, `left`, or `right` coordinates.
+- **MANDATORY**: All text and logos must live inside structured **CSS Grid or Flexbox layout zones** (e.g. columns, cards, banners) with explicit `gap`, `padding`, and `max-width` constraints.
+- Only the **hero cutout/portrait**, **background art/textures**, and **primary structural zone containers** (e.g. left column container, right column container, flush footer bar) are allowed to have absolute positioning on the canvas root. All children inside them must follow normal flow with flex/grid.
+
+### 2. Mandatory `data-layer` Tagging
+Every HTML poster must explicitly tag elements with their architectural layer:
+- `data-layer="background"`: Background textures, gradients, decorative frames, ambient glows (`z-index <= 5`). Ignored during collision audits.
+- `data-layer="subject"`: Cutout or feathered portraits (e.g., `che-portrait.png`, `che-feathered.png`, `che-grabcut.png`).
+- `data-layer="container"`: Structural cards, badges, ribbons, and footer bars. Allowed to contain child content elements and allowed to overlap the bottom 20% of a `subject` portrait as a grounded anchor.
+- `data-layer="content"`: All text nodes (kicker, headlines, dates, quotes, attributions, committee names) and brand logos (`aidso-emblem.png`, `aidso-students-black.png`, `aidso-students-white.png`).
+
+### 3. AIDSO Brand Header & Footer Rules
+Standardize how brand identity assets are integrated into posters:
+- **Lock Height and Aspect**: Always wrap logos in fixed containers with `object-fit: contain` (e.g. `w-20 h-20` for circular emblem, `h-10 md:h-12 w-auto` for student silhouettes). Never let logos stretch or float unconstrained.
+- **Background-Aware Asset Pairing**:
+  - On **dark or black footers/cards**: Use `aidso-emblem.png` (in white circular pill or badge) and `aidso-students-white.png` (white silhouette).
+  - On **light parchment or white cards**: Use `aidso-students-black.png` (black silhouette) or dark crimson typography.
+- **Flush Footer Architecture**: The footer banner must sit flush at `bottom-0 w-full` with explicit padding (e.g., `px-12 py-5`) and stay at least 3% (48px on 1600px artboard) clear of outer borders for text legibility.
+
+### 4. Mandatory CLI Audit Loop (Trust the Auditor Over Vision)
+- Before claiming any poster is complete, run:
+  ```bash
+  posterframes verify poster.html
+  # Or during rendering:
+  posterframes render poster.html --scale 2 --out poster.png
+  ```
+- If the auditor reports ANY errors (`CONTENT_OVERLAP`, `PORTRAIT_COLLISION`, `OCCLUSION_ERROR`, `SAFE_ZONE_VIOLATION`, `SPACING_TOO_TIGHT`), **you are NOT done**.
+- The CLI rendering pipeline automatically enforces a gate: any layout audit failure exits with a non-zero exit code.
+- **Use `--debug-boxes` to diagnose:**
+  ```bash
+  posterframes render poster.html --debug-boxes --out debug-audit.png
+  ```
+  This paints color-coded mathematical bounding boxes:
+  - 🟢 **Green**: Content bounding boxes
+  - 🔴 **Red**: Collision/overlap zones
+  - 🔵 **Cyan Dashed**: Subject boundary & alpha-hit points
+  - 🟡 **Yellow**: Vertical spacing rulers between siblings
+- Iterate on the HTML/CSS until the auditor outputs:
+  `✅ LAYOUT AUDIT PASSED (0 overlaps, 0 occlusions, 0 boundary violations)`.
+
+---
+
 ## 🎨 The Art Director's Rulebook for User Assets
 
 When a user provides photos, speaker headshots, portraits, logos, or backgrounds, **never just drop an unstyled `<img>` tag into an empty flexbox**. Treat every asset with intentional graphic effects:
@@ -458,11 +507,15 @@ When tasked with creating or editing a poster, follow this **non-negotiable** wo
    - Wrap Descriptor + Name + Tribute in a single **Sticky Lockup**.
    - Make the portrait **huge** (at least 50% canvas area) and ground it to an edge.
    - Ensure the footer banner is pinned flush at the bottom.
-4. **Deterministic Lint Gate (MANDATORY)**:
-   - Run `posterframes lint poster.html`.
-   - Resolve any reported `[FAIL]` (e.g. box fill $<75\%$, empty bands $>4u$, or safe margin breaches) before rendering.
-5. **Render with Scale**:
+4. **Deterministic Layout & Alpha Audit Gate (MANDATORY)**:
+   - Run `posterframes verify poster.html`.
+   - Never rely on visual inspection alone: the CLI audit mathematically checks bounding-box collisions, alpha-channel portrait overlap, occlusion, safe zones, and vertical rhythm.
+   - Any reported error (`CONTENT_OVERLAP`, `PORTRAIT_COLLISION`, `OCCLUSION_ERROR`, `SAFE_ZONE_VIOLATION`, `SPACING_TOO_TIGHT`) MUST be resolved before proceeding.
+5. **Render with Scale & Verification**:
    - Run `posterframes render poster.html --scale 2 --out poster.png`.
+   - If rendering fails with `❌ LAYOUT AUDIT FAILED`, inspect with `--debug-boxes`:
+     `posterframes render poster.html --debug-boxes --out debug.png`
+   - Iterate on CSS Grid/Flexbox constraints until the render passes cleanly with 0 errors.
 6. **Mandatory Multimodal Vision Audit**:
    - Call `view_file` on `poster.png`.
    - **Evaluate Against the Quality Checklist**:
