@@ -30,7 +30,7 @@
       height: 1600px;
       position: relative;
       overflow: hidden;
-      background: radial-gradient(circle at 65% 45%, #ffffff 0%, #f6f7f9 65%, #eaedf1 100%);
+      background: radial-gradient(circle at 65% 35%, #fdfbf7 0%, #f6f1e7 55%, #eae3d4 100%);
     }
     .font-anek { font-family: 'Anek Kannada', sans-serif; }
     .font-serif-kn { font-family: 'Noto Serif Kannada', serif; }
@@ -50,7 +50,7 @@
     /* Red Headline Styling for Che Guevara */
     .che-headline {
       color: #dc2626;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+      text-shadow: 0 2px 4px rgba(220, 38, 38, 0.15);
     }
   </style>
 </head>
@@ -62,87 +62,96 @@
   <div id="poster" class="poster-artboard select-none" data-width="1131" data-height="1600" data-preset="aidso-a4">
 
     <!-- L0: Subtle Paper Grain Overlay -->
-    <div class="absolute inset-0 opacity-[0.025] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none z-0" data-layer="background"></div>
+    <div class="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none z-0" data-layer="background"></div>
 
     <!-- =========================================================================
-         L1: HERO PORTRAIT (Right Column, Grounded into Bottom Black Bar)
+         L1: HERO PORTRAIT (Clean Cutout, Grounded into Bottom Black Bar)
          ========================================================================= -->
-    <div class="absolute right-[-80px] bottom-0 w-[640px] h-[1140px] z-10 pointer-events-none flex items-end justify-end overflow-hidden" data-layer="subject" data-bleed>
-      <!-- Che Guevara Portrait: Grayscale high-contrast with baked smooth feather -->
-      <img src="assets/che-portrait.png"
+    <div class="absolute right-[-140px] bottom-0 w-[780px] h-[1140px] z-10 pointer-events-none flex items-end justify-end overflow-hidden" data-layer="subject" data-bleed>
+      <!-- Che Guevara Cutout (che-grabcut.png with 100% transparent backdrop) -->
+      <img src="assets/che-grabcut.png"
            alt="Che Guevara"
-           class="h-[1140px] w-auto max-w-none object-cover object-top filter grayscale contrast-125 brightness-105 drop-shadow-[0_25px_35px_rgba(0,0,0,0.22)] relative z-10"
+           class="h-[1140px] w-auto max-w-none object-contain filter grayscale contrast-125 brightness-105 drop-shadow-[0_25px_35px_rgba(0,0,0,0.22)] relative z-10"
            data-layer="subject">
     </div>
 
     <!-- =========================================================================
-         TOP-RIGHT: Archival Date Badge (Locked zone)
+         TOP-RIGHT: Archival Date Badge (Solid Dark Contrast Pill, No Wireframe)
          ========================================================================= -->
-    <div class="absolute right-[54px] top-[54px] w-[190px] h-[250px] bg-[#faf7f2] border-[3.5px] border-black rounded-[28px] shadow-md z-20 flex flex-col items-center justify-center p-4 text-center gap-2" data-layer="container">
-      <!-- Big Bold Day Digits (Proportional black numerals) -->
-      <span class="font-jakarta font-black text-[80px] leading-none text-black tracking-tight" data-layer="content">
+    <div class="absolute right-[54px] top-[54px] bg-[#18181b] border-2 border-red-600 rounded-2xl shadow-xl z-20 flex flex-col items-center justify-center px-6 py-4 text-center" data-tight="true" data-layer="container">
+      <!-- Big Bold Day Digits -->
+      <span class="font-jakarta font-black text-[64px] leading-none text-white tracking-tight" data-layer="content">
         09
       </span>
+      <!-- Crimson Accent Divider -->
+      <div class="w-10 h-0.5 bg-red-500 my-2"></div>
       <!-- Month in Kannada -->
-      <span class="font-anek font-extrabold text-[28px] leading-tight text-black" data-layer="content">
+      <span class="font-anek font-extrabold text-[24px] leading-tight text-amber-400" data-layer="content">
         ಅಕ್ಟೋಬರ್
       </span>
       <!-- Year with Wide Letter-Spacing -->
-      <span class="font-jakarta font-bold text-[22px] leading-none text-black tracking-[0.25em]" data-layer="content">
+      <span class="font-jakarta font-bold text-[18px] leading-none text-slate-300 tracking-[0.25em] mt-2" data-layer="content">
         2 0 2 6
       </span>
     </div>
 
     <!-- =========================================================================
-         PRIMARY LEFT CONTENT ZONE (Flex Column, Structured, No Freeform Text)
+         PRIMARY LEFT CONTENT ZONE (Editorial Flow, Rhythmic Cadence, No Dead Space)
          ========================================================================= -->
-    <div class="absolute left-[54px] top-[54px] bottom-[215px] w-[430px] flex flex-col justify-between z-20" data-layer="container">
+    <div class="absolute left-[54px] top-[54px] w-[420px] flex flex-col gap-8 z-20" data-layer="container">
       
-      <!-- TOP: The Quotation Card -->
-      <div class="quote-box w-full bg-white/95 border-[3px] border-black rounded-[32px] shadow-sm flex flex-col justify-between p-7"
-           data-layer="container" data-box data-min-fill="70">
+      <!-- TOP: Editorial Commemorative Quote Card (Thick Crimson Accent Left Border) -->
+      <div class="quote-box w-full bg-[#fdfbf7]/95 border-l-[6px] border-l-[#dc2626] border-y border-r border-amber-900/15 rounded-r-3xl shadow-md p-7 flex flex-col justify-between"
+           data-layer="container" data-box data-min-fill="60">
         
-        <!-- Opening Quote Mark -->
+        <!-- Large Crimson Quote Mark -->
         <div class="flex items-center justify-start mb-2" data-layer="container">
-          <span class="text-6xl font-serif text-red-600 font-bold select-none leading-none inline-block" data-layer="content">“</span>
+          <span class="text-7xl font-serif text-[#dc2626] font-black select-none leading-none inline-block" data-layer="content">“</span>
         </div>
 
-        <!-- Quote Body in Kannada -->
-        <div class="py-1" data-layer="container">
-          <p class="font-serif-kn font-semibold text-[22px] leading-[1.62] text-slate-900 tracking-normal" data-layer="content">
+        <!-- Scaled-up Kannada Quote Body -->
+        <div class="py-2" data-layer="container">
+          <p class="font-serif-kn font-semibold text-[23.5px] leading-[1.62] text-slate-900 tracking-normal" data-layer="content">
             ವಿಶ್ವವಿದ್ಯಾಲಯವು ಕ್ರಾಂತಿಯ ಪ್ರಾಯೋಗಿಕ ಸಾಧನೆಗಳಿಂದ ದೂರ ಉಳಿದ ದಂತಗೋಪುರದಂತಿರಬಾರದು. ಶಿಕ್ಷಣ ವ್ಯವಸ್ಥೆಯ ಸುತ್ತಲಿರುವ ಗೋಡೆಗಳು ಉರುಳಬೇಕು. ಶಿಕ್ಷಣವು ಕೇವಲ ಹಣವಂತರ ಮಕ್ಕಳು ಪಡೆಯಬಹುದಾದ ಒಂದು ಸವಲತ್ತಾಗಿ ಉಳಿಯಬಾರದು.”
           </p>
         </div>
 
-        <!-- Attribution / Source at bottom of quote card -->
-        <div class="text-left pt-2" data-layer="container">
-          <span class="font-sans-kn font-bold text-[22px] text-slate-800 tracking-wide inline-block" data-layer="content">
+        <!-- Attribution with Crimson Accent -->
+        <div class="text-left pt-3 border-t border-amber-900/10 flex items-center justify-between" data-layer="container">
+          <span class="font-sans-kn font-bold text-[23px] text-red-700 tracking-wide inline-block" data-layer="content">
             -ಚೆ ಗುವಾರ
           </span>
         </div>
       </div>
 
+      <!-- MIDDLE: Subtle Editorial Divider -->
+      <div class="flex items-center gap-3 w-full opacity-60 px-2" data-layer="container">
+        <div class="h-[1.5px] bg-red-600/40 flex-1"></div>
+        <span class="text-red-600 text-lg">★</span>
+        <div class="h-[1.5px] bg-red-600/40 flex-1"></div>
+      </div>
+
       <!-- BOTTOM: Typographic Lockup (Sticky Triad + Tribute Badge) -->
-      <div class="w-full flex flex-col gap-6" data-layer="container">
+      <div class="w-full flex flex-col gap-8 px-1" data-layer="container">
         
         <!-- 1. Kicker / Pre-title -->
-        <span class="font-anek font-bold text-[26px] leading-[1.35] text-black tracking-normal inline-block" data-layer="content">
+        <span class="font-anek font-bold text-[26px] leading-[1.3] text-slate-800 tracking-normal inline-block" data-layer="content">
           ಸಾಮ್ರಾಜ್ಯಶಾಹಿ ವಿರೋಧಿ ಕ್ರಾಂತಿಕಾರಿ ಹೋರಾಟಗಾರ
         </span>
 
         <!-- 2. Hero Headline Name -->
-        <h1 class="che-headline font-serif-kn font-black text-[100px] leading-[1.08] tracking-tight text-red-600" data-layer="content">
+        <h1 class="che-headline font-serif-kn font-black text-[102px] leading-[1.05] tracking-tight text-[#dc2626]" data-layer="content">
           ಚೆ ಗುವಾರ
         </h1>
 
         <!-- 3. Subline / Occasion -->
-        <p class="font-anek font-bold text-[27px] leading-[1.3] text-black" data-layer="content">
+        <p class="font-anek font-bold text-[27px] leading-[1.3] text-slate-900" data-layer="content">
           ಅವರ 59ನೇ ಸ್ಮರಣ ದಿನದಂದು ಅವರಿಗೆ
         </p>
 
         <!-- 4. Tag Badge (Dark Contrast Block) -->
-        <div class="mt-1 inline-block px-7 py-3 rounded-xl bg-[#18181b] border-2 border-black text-white w-max shadow-sm" data-layer="container">
-          <span class="font-anek font-bold text-[25px] tracking-wide leading-none" data-layer="content">
+        <div class="mt-1 inline-block px-8 py-3 rounded-xl bg-[#18181b] border border-black/40 text-white w-max shadow-md" data-layer="container">
+          <span class="font-anek font-bold text-[25px] tracking-wide leading-none text-amber-300" data-layer="content">
             ನಮ್ಮ ಗೌರವ ನಮನಗಳು!!
           </span>
         </div>
@@ -152,30 +161,37 @@
     </div>
 
     <!-- =========================================================================
-         FLUSH BOTTOM FOOTER BANNER (Height: 185px, Solid Black)
+         FLUSH BOTTOM FOOTER BANNER (Height: 185px, Solid Black with Balanced Width)
          ========================================================================= -->
-    <div class="absolute inset-x-0 bottom-0 h-[185px] bg-black z-30 flex items-center justify-between px-14 border-t-2 border-black" data-layer="container" data-bleed>
+    <div class="absolute inset-x-0 bottom-0 h-[185px] bg-black z-30 flex items-center justify-between px-14 border-t-2 border-red-600/80" data-layer="container" data-bleed>
       
-      <!-- Left: AIDSO Identity Lockup -->
-      <div class="flex items-center gap-5" data-layer="container">
+      <!-- Left: Full AIDSO Identity Lockup (Emblem + Kannada + English Full Name) -->
+      <div class="flex items-center gap-6" data-tight="true" data-layer="container">
         <!-- Official AIDSO Emblem -->
         <div class="w-16 h-16 bg-white rounded-full p-2 flex items-center justify-center shadow-md shrink-0" data-layer="container">
           <img src="assets/aidso-emblem.png" alt="AIDSO Emblem" class="w-full h-full object-contain" data-layer="content">
         </div>
 
-        <!-- Typography: "AIDSO ಕರ್ನಾಟಕ" -->
+        <!-- Typography: "AIDSO ಕರ್ನಾಟಕ" and Full Name -->
         <div class="flex flex-col justify-center" data-tight="true" data-layer="container">
-          <span class="aidso-brand-text text-[50px] leading-[0.92]" data-layer="content">
-            AIDSO
-          </span>
-          <span class="font-sans-kn font-bold text-white text-[24px] leading-tight mt-2" data-layer="content">
-            ಕರ್ನಾಟಕ
+          <div class="flex items-baseline gap-4" data-tight="true" data-layer="container">
+            <span class="aidso-brand-text text-[52px] leading-none" data-layer="content">
+              AIDSO
+            </span>
+            <span class="font-sans-kn font-bold text-white text-[28px] leading-none" data-layer="content">
+              ಕರ್ನಾಟಕ
+            </span>
+          </div>
+          <span class="font-jakarta font-bold text-[15px] text-slate-300 uppercase tracking-widest mt-2" data-layer="content">
+            All India Democratic Students' Organisation
           </span>
         </div>
       </div>
 
-      <!-- Right: Pure Black space seamlessly housing Che's shoulder/jacket -->
-      <div data-layer="container"></div>
+      <!-- Right: Red Accent Geometric Accent -->
+      <div class="flex items-center pr-4" data-layer="container">
+        <div class="w-28 h-1 bg-red-600 rounded-full opacity-80"></div>
+      </div>
 
     </div>
 

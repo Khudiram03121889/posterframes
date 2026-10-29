@@ -42,7 +42,7 @@ Standardize how brand identity assets are integrated into posters:
   # Or during rendering:
   posterframes render poster.html --scale 2 --out poster.png
   ```
-- If the auditor reports ANY errors (`CONTENT_OVERLAP`, `PORTRAIT_COLLISION`, `OCCLUSION_ERROR`, `SAFE_ZONE_VIOLATION`, `SPACING_TOO_TIGHT`), **you are NOT done**.
+- If the auditor reports ANY errors (`CONTENT_OVERLAP`, `PORTRAIT_COLLISION`, `OCCLUSION_ERROR`, `SAFE_ZONE_VIOLATION`, `SPACING_TOO_TIGHT`, `EXCESSIVE_DEAD_SPACE`, `CONTAINER_UNDERFILLED`, `WIREFRAME_BORDER_DETECTED`, `PORTRAIT_HARSH_SEAM`), **you are NOT done**.
 - The CLI rendering pipeline automatically enforces a gate: any layout audit failure exits with a non-zero exit code.
 - **Use `--debug-boxes` to diagnose:**
   ```bash
@@ -55,6 +55,52 @@ Standardize how brand identity assets are integrated into posters:
   - 🟡 **Yellow**: Vertical spacing rulers between siblings
 - Iterate on the HTML/CSS until the auditor outputs:
   `✅ LAYOUT AUDIT PASSED (0 overlaps, 0 occlusions, 0 boundary violations)`.
+
+---
+
+## 🎨 Graphic Design Taste & Visual Hierarchy Laws
+
+> [!IMPORTANT]
+> **AESTHETIC TASTE & PROPORTIONAL COMPOSITION CONTRACT**
+> Passing bounding-box collision tests is only the baseline. A poster must have deliberate art direction, balanced vertical rhythm, and authentic editorial graphic styling.
+
+### 1. Canvas Background & Atmosphere
+- **Never use sterile `#FFFFFF` with plain black wireframe boxes.**
+- Use rich, tactile editorial palettes:
+  - Warm archival paper: `#F6F2EA` or `#F2ECE1` with a subtle radial lighting gradient (`radial-gradient(circle at 65% 40%, #FFFDF9 0%, #F5EFE6 60%, #EAE2D5 100%)`) and paper grain texture (`opacity-[0.035]`).
+  - Commemorative themes: Deep charcoal/slate (`#0F172A`) or rich crimson/burgundy duotone split layouts.
+
+### 2. Portrait Integration (Zero Visible Photo Rectangles)
+- **Cutout Portraits (`che-grabcut.png`):** Ensure the background around the subject is 100% transparent (`alpha = 0`). Ground the subject's torso flush against the bottom footer bar or a lower-third ribbon.
+- **Rectangular or Dark-Background Photos (`che-raw.jpg`, `che-portrait.png`):** NEVER let a raw photo rectangle end abruptly mid-page against a light canvas. Either:
+  - **Multi-Stop Composite Mask:** Apply CSS `mask-image: linear-gradient(to right, transparent 0%, black 28%), linear-gradient(to bottom, transparent 0%, black 18%);` so the photo edges dissolve imperceptibly into the canvas.
+  - **Architectural Framing:** Set the portrait inside an intentional editorial frame (e.g., full-height split column, bold circular arch medallion with crimson/gold accent rings, or dark matching canvas).
+
+### 3. Editorial Quote Styling (No Wireframe Boxes)
+- **Banned:** Plain `2px solid black` rounded rectangles with white fills floating on white canvases.
+- **Mandatory Editorial Treatment:**
+  - Large decorative quote glyph: `font-size: 3.5rem+`, bold crimson `#C62828` or `#DC2626`, leading-none.
+  - Bold accent rule: `border-left: 5px solid #C62828` or `#DC2626`.
+  - Warm tinted card surface: subtle surface fill (`rgba(198, 40, 40, 0.035)` or `#EFECE6` / `#FAF7F2`) with `p-7` or `p-8`.
+  - Readable typography: generous font scale with `line-height: 1.55–1.65` that naturally fills $\ge 50\%$ of the card area.
+
+### 4. Compact, High-Contrast Date Badge
+- Date badges (`09 ಅಕ್ಟೋಬರ್ 2026`) must use `width: fit-content; height: fit-content;` with tight, balanced padding (`14px 22px` to `16px 26px`).
+- Never float date numerals inside an oversized empty rectangle ($> 35\%$ empty padding is banned).
+- Apply strong typographic hierarchy: bold primary numeral (`09`), thin decorative divider rule (`border-t border-red-500/30`), and crisp month/year lockup.
+
+### 5. Cohesive Left-Column Flow (No Middle Dead-Hole)
+- **Banned:** Unconstrained `justify-content: space-between` across a 1300px+ column for only 2 items.
+- **Mandatory Rhythmic Cadence:** Structure the left column with intentional spacing (`gap: 32px–48px`):
+  1. Top: Commemorative quote card with red accent bar.
+  2. Middle divider: Subtle typographic ornament, star glyph (`★`), or crimson divider line.
+  3. Bottom: Typographic lockup stack (`ಸಾಮ್ರಾಜ್ಯಶಾಹಿ ವಿರೋಧಿ ಕ್ರಾಂತಿಕಾರಿ ಹೋರಾಟಗಾರ` $\rightarrow$ monumental crimson `ಚೆ ಗುವಾರ` $\rightarrow$ occasion subline $\rightarrow$ dark contrast tribute badge `ನಮ್ಮ ಗೌರವ ನಮನಗಳು!!`).
+  - No gap between adjacent visual blocks may exceed `14%` of canvas height (224px on 1600px A4).
+
+### 6. Balanced Organization Footer
+- In the flush bottom footer bar (`h-[175px]` to `h-[185px]`):
+  - **Left:** Official `aidso-emblem.png` circular emblem + 3D `AIDSO ಕರ್ನಾಟಕ` typography.
+  - **Center/Right:** Balance with the full English organization identity (`All India Democratic Students' Organisation`) or clean crimson accent rules so the full width looks cohesive and intentional.
 
 ---
 
